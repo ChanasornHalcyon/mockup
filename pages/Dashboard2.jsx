@@ -100,9 +100,9 @@ const Dashboard2 = () => {
 
                         <tbody className="divide-y">
                             {[
-                                ["Cutomers1","Thailand","2400" ],
-                                ["Cutomers2", "Thailand","2000"],
-                                ["Cutomers3 ", "Thailand","500"],
+                                ["Customers1","Thailand","2400" ],
+                                ["Customers2", "Thailand","2000"],
+                                ["Customers3 ", "Thailand","500"],
                             ].map((row, i) => (
                                 <tr key={i} className="hover:bg-gray-50">
                                     {row.map((col, idx) => (
