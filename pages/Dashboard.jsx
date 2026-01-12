@@ -29,18 +29,18 @@ const Dashboard = () => {
         <div className="space-y-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
                 <StatCard
-                    title="Total Sales"
+                    title="This Month Sales"
                     value="21,324"
                     change="+2,031"
                     icon={ShoppingBag}
                 />
                 <StatCard
-                    title="Total Income"
+                    title="This Month Income"
                     value="$221,324.50"
                     change="-2,201"
                     icon={DollarSign}
                 />
-                <StatCard
+                {/* <StatCard
                     title="Total Sessions"
                     value="16,703"
                     change="+3,392"
@@ -51,7 +51,7 @@ const Dashboard = () => {
                     value="12.8%"
                     change="-1.22%"
                     icon={TrendingUp}
-                />
+                /> */}
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -82,7 +82,7 @@ const Dashboard = () => {
             <div className="bg-white rounded-2xl border shadow overflow-hidden">
                 <div className="flex justify-between items-center p-5 border-b">
                     <h3 className="font-semibold text-gray-800">
-                        Recent Customers
+                     Distributors
                     </h3>
 
                 </div>

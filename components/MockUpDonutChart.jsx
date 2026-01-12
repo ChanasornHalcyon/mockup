@@ -9,12 +9,13 @@ import {
 } from "recharts";
 
 const data = [
-    { name: "Halcyon Vietnam", value: 45 },
-    { name: "YN Engineering", value: 30 },
-    { name: "FDM", value: 25 },
+    { name: "Enmill", value: 25 },
+    { name: "Drill", value: 30 },
+    { name: "Insert", value: 10 },
+    { name: "PCD", value: 35 },
 ];
 
-const COLORS = ["#2563EB", "#16A34A", "#F59E0B"];
+const COLORS = ["#FF0099","#00FF33", "#33FFFF", "#A0522D"];
 
 const CustomLegend = ({ payload }) => (
     <div className="flex justify-center gap-6 pt-6 text-xs text-gray-600">

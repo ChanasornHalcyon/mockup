@@ -43,7 +43,7 @@ const Customers = () => {
           Customers
         </h1>
 
-        <button
+        {/* <button
           className="
             px-4 py-2 rounded-lg
             bg-[#0B4EA2] text-white font-medium
@@ -51,7 +51,7 @@ const Customers = () => {
           "
         >
           + Add Customer
-        </button>
+        </button> */}
       </div>
 
       <div className="bg-white rounded-2xl border border-gray-200 shadow-[0_10px_30px_rgba(0,0,0,0.06)] overflow-x-auto">
