@@ -16,22 +16,20 @@ const MENU = [
     { key: "dashboard2", label: "Dashboard", icon: Home },
     { key: "customers", label: "Customers", icon: ClipboardList },
     { key: "products", label: "Products", icon: Package },
-    // { key: "users", label: "Users", icon: Users },
     { key: "settings", label: "Settings", icon: Settings },
 ];
 
 const Homepage2 = () => {
-    const [activePage, setActivePage] = useState("dashboard");
+    const [activePage, setActivePage] = useState("dashboard2");
     const [sidebarOpen, setSidebarOpen] = useState(false);
 
     const renderContent = () => {
         switch (activePage) {
+             case "dashboard2":
+                return <Dashboard2 />;
             case "customers":
                 return <Customers2 />;
 
-            case "dashboard2":
-                return <Dashboard2 />;
-           
                 case "products":
                 return <Products />;
             default:
