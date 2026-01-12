@@ -9,7 +9,7 @@ import {
 } from "recharts";
 
 const data = [
-    { name: "Enmill", value: 25 },
+    { name: "Endmill", value: 25 },
     { name: "Drill", value: 30 },
     { name: "Insert", value: 10 },
     { name: "PCD", value: 35 },

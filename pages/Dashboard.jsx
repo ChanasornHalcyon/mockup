@@ -82,7 +82,7 @@ const Dashboard = () => {
             <div className="bg-white rounded-2xl border shadow overflow-hidden">
                 <div className="flex justify-between items-center p-5 border-b">
                     <h3 className="font-semibold text-gray-800">
-                    This Month Sales
+                        This Month Sales
                     </h3>
 
                 </div>
@@ -93,16 +93,16 @@ const Dashboard = () => {
                             <tr>
                                 <th className="px-6 py-3 text-left">Name</th>
                                 <th className="px-6 py-3 text-left">Location</th>
-                                  <th className="px-6 py-3 text-left">Sales</th>
+                                <th className="px-6 py-3 text-left">Sales</th>
                                 <th className="px-6 py-3 text-right">Actions</th>
                             </tr>
                         </thead>
 
                         <tbody className="divide-y">
                             {[
-                                ["FDM","Thailand","2400" ],
-                                ["Halcyon Vietnam ", "Vietnam","2000"],
-                                ["YN Engineering ", "Thailand","500"],
+                                ["FDM", "Thailand", "2400"],
+                                ["Halcyon Vietnam ", "Vietnam", "2000"],
+                                ["YN Engineering ", "Thailand", "500"],
                             ].map((row, i) => (
                                 <tr key={i} className="hover:bg-gray-50">
                                     {row.map((col, idx) => (
