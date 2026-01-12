@@ -9,7 +9,7 @@ import {
     X,
 } from "lucide-react";
 import Customers from "./Customers";
-
+import Dashboard from "./Dashboard";
 const MENU = [
     { key: "dashboard", label: "Dashboard", icon: Home },
     { key: "customers", label: "Customers", icon: ClipboardList },
@@ -25,8 +25,10 @@ const Homepage = () => {
         switch (activePage) {
             case "customers":
                 return <Customers />;
+            case "dashboard":
+                return <Dashboard />;
             default:
-                
+
         }
     };
 
