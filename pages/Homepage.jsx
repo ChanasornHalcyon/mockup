@@ -26,25 +26,7 @@ const Homepage = () => {
             case "customers":
                 return <Customers />;
             default:
-                return (
-                    <>
-                        <div className="flex justify-between items-center mb-8">
-                            <h1 className="text-2xl font-semibold text-gray-800">
-                                Dashboard
-                            </h1>
-                            <div className="text-sm text-gray-500">
-                                Welcome, <span className="font-medium text-gray-700">Admin</span>
-                            </div>
-                        </div>
-
-                        <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-[0_10px_30px_rgba(0,0,0,0.06)]">
-                            <p className="text-gray-500 text-sm mb-2">Overview</p>
-                            <div className="h-48 flex items-center justify-center text-gray-400">
-                                ( Chart / Table / Activity log )
-                            </div>
-                        </div>
-                    </>
-                );
+                
         }
     };
 

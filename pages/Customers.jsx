@@ -5,7 +5,7 @@ const Customers = () => {
   const customers = [
     {
       customer: "Customer1",
-      distributor: "JJ Tools",
+      distributor: "FDM",
       country: "Thailand",
       totalSales: 1250000,
     },
@@ -18,8 +18,21 @@ const Customers = () => {
     {
       customer: "Customer3",
       distributor: "YN Engineers",
-      country: "Japan",
+      country: "Thailand",
       totalSales: 2150000,
+    },
+
+    {
+      customer: "Customer4",
+      distributor: "YN Engineers",
+      country: "Thailand",
+      totalSales: 5150000,
+    },
+    {
+      customer: "Customer5",
+      distributor: "Halcyon Vietnam",
+      country: "Vietnam",
+      totalSales: 40000,
     },
   ];
 

@@ -32,7 +32,7 @@ const Index = () => {
             </label>
             <input
               type="text"
-              placeholder="Enter username"
+              placeholder=" username"
               className="
                 mt-2 w-full px-4 py-2.5 rounded-xl
                 border border-gray-300
@@ -49,7 +49,7 @@ const Index = () => {
             </label>
             <input
               type="password"
-              placeholder="Enter password"
+              placeholder=" password"
               className="
                 mt-2 w-full px-4 py-2.5 rounded-xl
                 border border-gray-300
@@ -60,22 +60,52 @@ const Index = () => {
             />
           </div>
 
-          <button
-            type="button"
-            onClick={goHomapage}
-            className="
-              w-full mt-6 py-2.5 rounded-xl
-              font-semibold text-white
-              bg-gradient-to-r from-blue-600 to-blue-700
-              hover:from-blue-700 hover:to-blue-800
-              shadow-[0_8px_25px_rgba(37,99,235,0.35)]
-              transition-all duration-200
-              hover:-translate-y-0.5 active:scale-95
-              cursor-pointer
-            "
-          >
-            Login
-          </button>
+          <div className="flex flex-col sm:flex-row gap-5 mt-6">
+            <button
+              type="button"
+              onClick={goHomapage}
+              className="
+                    group
+                    w-44 py-3 rounded-2xl
+                    font-semibold text-white text-sm
+                    bg-gradient-to-r from-blue-600 to-blue-700
+                    shadow-[0_10px_30px_rgba(37,99,235,0.35)]
+                    transition-all duration-200
+                    hover:from-blue-700 hover:to-blue-800
+                    hover:-translate-y-1
+                    active:scale-95
+                    cursor-pointer
+                  "
+            >
+              <div className="flex flex-col items-center gap-1">
+                <span className="text-base">JJ Tools Login</span>
+              </div>
+            </button>
+
+            <button
+              type="button"
+              onClick={goHomapage}
+              className="
+                    group
+                    w-44 py-3 rounded-2xl
+                    font-semibold text-white text-sm 
+                    bg-pink-500
+                    border border-blue-200
+                    shadow-[0_10px_30px_rgba(0,0,0,0.08)]
+                    transition-all duration-200
+                    hover:bg-pink-500
+                    hover:-translate-y-1
+                    active:scale-95
+                    cursor-pointer
+    "
+            >
+              <div className="flex flex-col items-center gap-1">
+                <span className="text-base">Distributor Login</span>
+              </div>
+            </button>
+          </div>
+
+
         </form>
 
         <p className="text-center text-xs text-gray-500 mt-6">
