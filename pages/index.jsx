@@ -1,0 +1,89 @@
+import React from "react";
+import { useRouter } from "next/router";
+const Index = () => {
+  const router = useRouter();
+  const goHomapage = () => {
+    router.push("./Homepage")
+  }
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#EEF2FF] via-[#F5F7FF] to-[#E0E7FF] px-4">
+      <div
+        className="
+          w-full max-w-md mb-32
+          bg-white/80 backdrop-blur-xl
+          border border-blue-200/60
+          rounded-3xl
+          shadow-[0_20px_60px_rgba(37,99,235,0.25)]
+          p-8
+          animate-fadeIn
+        "
+      >
+        <div className="flex justify-center mb-4"></div>
+
+        <h1 className="text-center text-2xl font-semibold text-gray-800">
+          The Tools Shop
+        </h1>
+
+
+        <form className="mt-8 space-y-5">
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              Username
+            </label>
+            <input
+              type="text"
+              placeholder="Enter username"
+              className="
+                mt-2 w-full px-4 py-2.5 rounded-xl
+                border border-gray-300
+                bg-white/70 text-gray-900
+                focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-500
+                transition
+              "
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700">
+              Password
+            </label>
+            <input
+              type="password"
+              placeholder="Enter password"
+              className="
+                mt-2 w-full px-4 py-2.5 rounded-xl
+                border border-gray-300
+                bg-white/70 text-gray-900
+                focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-500
+                transition
+              "
+            />
+          </div>
+
+          <button
+            type="button"
+            onClick={goHomapage}
+            className="
+              w-full mt-6 py-2.5 rounded-xl
+              font-semibold text-white
+              bg-gradient-to-r from-blue-600 to-blue-700
+              hover:from-blue-700 hover:to-blue-800
+              shadow-[0_8px_25px_rgba(37,99,235,0.35)]
+              transition-all duration-200
+              hover:-translate-y-0.5 active:scale-95
+              cursor-pointer
+            "
+          >
+            Login
+          </button>
+        </form>
+
+        <p className="text-center text-xs text-gray-500 mt-6">
+          The Tools Shop © {new Date().getFullYear()}
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default Index;
