@@ -1,111 +1,149 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import {
     Home,
     ClipboardList,
     Users,
     Settings,
     LogOut,
+    Menu,
+    X,
 } from "lucide-react";
+import Customers from "./Customers";
 
 const MENU = [
-    { label: "Dashboard", icon: Home },
-    { label: "Customers", icon: ClipboardList },
-    { label: "Users", icon: Users },
-    { label: "Settings", icon: Settings },
+    { key: "dashboard", label: "Dashboard", icon: Home },
+    { key: "customers", label: "Customers", icon: ClipboardList },
+    { key: "users", label: "Users", icon: Users },
+    { key: "settings", label: "Settings", icon: Settings },
 ];
 
 const Homepage = () => {
+    const [activePage, setActivePage] = useState("dashboard");
     const [sidebarOpen, setSidebarOpen] = useState(false);
+
+    const renderContent = () => {
+        switch (activePage) {
+            case "customers":
+                return <Customers />;
+            default:
+                return (
+                    <>
+                        <div className="flex justify-between items-center mb-8">
+                            <h1 className="text-2xl font-semibold text-gray-800">
+                                Dashboard
+                            </h1>
+                            <div className="text-sm text-gray-500">
+                                Welcome, <span className="font-medium text-gray-700">Admin</span>
+                            </div>
+                        </div>
+
+                        <div className="bg-white rounded-2xl p-6 border border-gray-200 shadow-[0_10px_30px_rgba(0,0,0,0.06)]">
+                            <p className="text-gray-500 text-sm mb-2">Overview</p>
+                            <div className="h-48 flex items-center justify-center text-gray-400">
+                                ( Chart / Table / Activity log )
+                            </div>
+                        </div>
+                    </>
+                );
+        }
+    };
+
     return (
-        <div className="h-screen flex bg-[#F8F9FD] overflow-hidden">
+        <div className="h-screen flex bg-[#F8F9FD] overflow-hidden relative">
 
-
+            {sidebarOpen && (
+                <div
+                    className="fixed inset-0 bg-black/30 z-30 md:hidden"
+                    onClick={() => setSidebarOpen(false)}
+                />
+            )}
             <aside
                 className={`
-    fixed md:static z-40
-    h-full
-    w-64 md:w-56 lg:w-64
-    bg-white
-    border-r border-gray-200
-    flex flex-col
-    shadow-[2px_0_20px_rgba(0,0,0,0.05)]
-    transition-transform duration-300
-    ${sidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}
-  `}
+          fixed md:static z-40
+          h-full
+          w-64
+          bg-white border-r
+          flex flex-col
+          shadow-[2px_0_20px_rgba(0,0,0,0.05)]
+          transition-transform duration-300
+          ${sidebarOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}
+        `}
             >
 
-                <div className="h-20 flex items-center justify-center border-b">
+                <div className="h-20 flex items-center justify-between px-5 border-b">
                     <div className="flex items-center gap-3 text-[#0B4EA2]">
                         <img
                             src="/JJTOOLS.jpg"
                             alt="JJ Tools"
-                            className="h-9 w-9 rounded-lg"
+                            className="h-10 w-10 rounded-lg"
                         />
-                        <span className="text-lg font-semibold tracking-wide hidden md:block">
+                        <span className="text-lg font-semibold tracking-wide">
                             JJ Tools
                         </span>
                     </div>
+
+
+                    <button
+                        className="md:hidden text-gray-500"
+                        onClick={() => setSidebarOpen(false)}
+                    >
+                        <X size={22} />
+                    </button>
                 </div>
 
 
-                <nav className="flex-1 px-3 md:px-4 py-6 space-y-2">
+                <nav className="flex-1 px-4 py-6 space-y-2">
                     {MENU.map((item) => {
                         const Icon = item.icon;
+                        const active = activePage === item.key;
+
                         return (
                             <button
-                                key={item.label}
-                                className="
-          w-full flex items-center gap-3 px-4 py-3 rounded-xl
-          text-gray-700 font-medium
-          hover:bg-blue-50 hover:text-[#0B4EA2]
-          transition
-        "
+                                key={item.key}
+                                onClick={() => {
+                                    setActivePage(item.key);
+                                    setSidebarOpen(false);
+                                }}
+                                className={`
+                                    w-full flex items-center gap-3 px-4 py-3 rounded-xl
+                                    font-medium transition cursor-pointer
+                                    ${active
+                                        ? "bg-blue-100 text-[#0B4EA2]"
+                                        : "text-gray-700 hover:bg-blue-50 hover:text-[#0B4EA2]"
+                                    }
+                                    `}
                             >
                                 <Icon size={20} />
-                                <span className="hidden md:inline">{item.label}</span>
+                                {item.label}
                             </button>
                         );
                     })}
                 </nav>
 
 
-
                 <div className="p-4 border-t">
-                    <button
-                        className="
-              w-full flex items-center gap-3 px-4 py-3 rounded-xl
-              text-red-600 font-medium
-              hover:bg-red-50 transition
-            "
-                    >
+                    <button className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-red-600 hover:bg-red-50 transition">
                         <LogOut size={20} />
                         Logout
                     </button>
                 </div>
             </aside>
 
+
             <main className="flex-1 flex flex-col overflow-auto">
 
-                <div className="flex justify-between items-center mb-8">
-                    <h1 className="text-2xl font-semibold text-gray-800">
-                        Dashboard
-                    </h1>
-
-                    <div className="text-sm text-gray-500">
-                        Welcome, <span className="font-medium text-gray-700">Admin</span>
-                    </div>
+                <div className="md:hidden flex items-center gap-3 p-4 bg-white border-b">
+                    <button onClick={() => setSidebarOpen(true)}>
+                        <Menu className="text-black" size={24} />
+                    </button>
+                    <span className="font-semibold text-gray-700">
+                        {MENU.find((m) => m.key === activePage)?.label}
+                    </span>
                 </div>
 
-                <div className="
-          mt-10 bg-white rounded-2xl p-6
-          border border-gray-200
-          shadow-[0_10px_30px_rgba(0,0,0,0.06)]
-        ">
-                    <p className="text-gray-500 text-sm mb-2">Overview</p>
-                    <div className="h-48 flex items-center justify-center text-gray-400">
-                        ( Chart / Table / Activity log )
-                    </div>
+
+                <div className="p-4 md:p-6">
+                    {renderContent()}
                 </div>
             </main>
         </div>
