@@ -5,28 +5,35 @@ import {
     Users,
     Settings,
     LogOut,
+    Package,
     Menu,
     X,
 } from "lucide-react";
-import Customers from "./Customers";
-import Dashboard from "./Dashboard";
+import Customers2 from "./Customer2";
+import Products from "./Products";
+import Dashboard2 from "./Dashboard2";
 const MENU = [
-    { key: "dashboard", label: "Dashboard", icon: Home },
+    { key: "dashboard2", label: "Dashboard", icon: Home },
     { key: "customers", label: "Customers", icon: ClipboardList },
+    { key: "products", label: "Products", icon: Package },
     // { key: "users", label: "Users", icon: Users },
     { key: "settings", label: "Settings", icon: Settings },
 ];
 
-const Homepage = () => {
+const Homepage2 = () => {
     const [activePage, setActivePage] = useState("dashboard");
     const [sidebarOpen, setSidebarOpen] = useState(false);
 
     const renderContent = () => {
         switch (activePage) {
             case "customers":
-                return <Customers />;
-            case "dashboard":
-                return <Dashboard />;
+                return <Customers2 />;
+
+            case "dashboard2":
+                return <Dashboard2 />;
+           
+                case "products":
+                return <Products />;
             default:
 
         }
@@ -57,13 +64,12 @@ const Homepage = () => {
                 <div className="h-20 flex items-center justify-between px-5 border-b">
                     <div className="flex items-center gap-3 text-[#0B4EA2]">
                         <img
-                            src="/JJTOOLS.jpg"
-                            alt="JJ Tools"
-                            className="h-10 w-10 rounded-lg"
+                            src="/FDMLOGO.jpg"
+                            className="h-15 w-auto rounded-lg"
                         />
-                        <span className="text-lg font-semibold tracking-wide">
-                            JJ Tools
-                        </span>
+                        {/* <span className="text-lg font-semibold tracking-wide">
+                            FDM
+                        </span> */}
                     </div>
 
 
@@ -134,4 +140,4 @@ const Homepage = () => {
     );
 };
 
-export default Homepage;
+export default Homepage2;

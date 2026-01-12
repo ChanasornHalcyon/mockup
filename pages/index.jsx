@@ -2,9 +2,14 @@ import React from "react";
 import { useRouter } from "next/router";
 const Index = () => {
   const router = useRouter();
+
   const goHomapage = () => {
     router.push("./Homepage")
   }
+  const distributor = () => {
+    router.push("./Homepage2")
+  }
+  
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#EEF2FF] via-[#F5F7FF] to-[#E0E7FF] px-4">
       <div
@@ -84,7 +89,7 @@ const Index = () => {
 
             <button
               type="button"
-              onClick={goHomapage}
+              onClick={distributor}
               className="
                     group
                     w-44 py-3 rounded-2xl
