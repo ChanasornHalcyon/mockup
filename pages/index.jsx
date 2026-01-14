@@ -9,7 +9,7 @@ const Index = () => {
   const distributor = () => {
     router.push("./Homepage2")
   }
-  
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#EEF2FF] via-[#F5F7FF] to-[#E0E7FF] px-4">
       <div
@@ -26,7 +26,7 @@ const Index = () => {
         <div className="flex justify-center mb-4"></div>
 
         <h1 className="text-center text-2xl font-semibold text-gray-800">
-          The Tools Shop
+          Central Warehouse Backoffice
         </h1>
 
 
@@ -114,7 +114,7 @@ const Index = () => {
         </form>
 
         <p className="text-center text-xs text-gray-500 mt-6">
-          The Tools Shop © {new Date().getFullYear()}
+            Central Warehouse Backoffice © {new Date().getFullYear()}
         </p>
       </div>
     </div>

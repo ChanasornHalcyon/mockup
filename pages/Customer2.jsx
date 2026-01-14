@@ -5,11 +5,11 @@ const Customers2 = () => {
   const [openModal, setOpenModal] = useState(false);
 
   const customers = [
-    { customer: "Customer1", country: "Thailand", totalSales: 1250000 },
-    { customer: "Customer2", country: "Thailand", totalSales: 980000 },
-    { customer: "Customer3", country: "Thailand", totalSales: 2150000 },
-    { customer: "Customer4", country: "Thailand", totalSales: 5150000 },
-    { customer: "Customer5", country: "Thailand", totalSales: 40000 },
+    { customerid: "001", customer: "Customer1", country: "Thailand", type: "Dealer", totalSales: 1250000 },
+    { customerid: "002", customer: "Customer2", country: "Thailand", type: "Dealer", totalSales: 980000 },
+    { customerid: "003", customer: "Customer3", country: "Thailand", type: "End User", totalSales: 2150000 },
+    { customerid: "004", customer: "Customer4", country: "Thailand", type: "End User ", totalSales: 5150000 },
+    { customerid: "007", customer: "Customer5", country: "Thailand", type: "End User", totalSales: 40000 },
   ];
   const formatUSD = (value) =>
     new Intl.NumberFormat("en-US", {
@@ -39,8 +39,10 @@ const Customers2 = () => {
         <table className="min-w-full text-sm">
           <thead>
             <tr className="bg-gray-50 text-gray-600 text-left">
-              <th className="px-6 py-4 font-semibold">Customers</th>
+              <th className="px-6 py-4 font-semibold">Customers Id</th>
+              <th className="px-6 py-4 font-semibold">Customers Name</th>
               <th className="px-6 py-4 font-semibold">Country</th>
+              <th className="px-6 py-4 font-semibold">type</th>
               <th className="px-6 py-4 font-semibold text-right">
                 Total Sales
               </th>
@@ -54,10 +56,16 @@ const Customers2 = () => {
                 className="border-t hover:bg-blue-50/40 transition"
               >
                 <td className="px-6 py-4 font-medium text-gray-800">
+                  {item.customerid}
+                </td>
+                <td className="px-6 py-4 font-medium text-gray-800">
                   {item.customer}
                 </td>
                 <td className="px-6 py-4 text-gray-600">
                   {item.country}
+                </td>
+                <td className="px-6 py-4 text-gray-600">
+                  {item.type}
                 </td>
                 <td className="px-6 py-4 text-right font-semibold text-[#0B4EA2]">
                   {formatUSD(item.totalSales)}

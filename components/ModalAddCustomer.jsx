@@ -3,12 +3,14 @@ import { motion } from "framer-motion";
 
 const ModalAddCustomer = ({ onClose }) => {
   const [form, setForm] = useState({
-    customer: "",
+    customername: "",
+    customerid: "",
+    customertype: "",
     country: "",
   });
 
   const COUNTRY_OPTIONS = ["Thailand", "Vietnam", "Japan", "China", "USA"];
-
+  const Customertype = ["Dealer", "End User"]
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
@@ -37,11 +39,22 @@ const ModalAddCustomer = ({ onClose }) => {
 
           <div className="p-6 space-y-5 text-sm">
             <div className="flex flex-col gap-1">
-              <label className="font-semibold text-black">Customer</label>
+              <label className="font-semibold text-black">Customer ID</label>
+              <input
+                type="text"
+                name="customerid"
+                value={form.customerid}
+                onChange={handleChange}
+                placeholder=" Customer Id"
+                className="p-2 border rounded-lg text-black bg-white"
+              />
+            </div>
+            <div className="flex flex-col gap-1">
+              <label className="font-semibold text-black">Customer Name</label>
               <input
                 type="text"
                 name="customer"
-                value={form.customer}
+                value={form.customername}
                 onChange={handleChange}
                 placeholder=" Customer Name"
                 className="p-2 border rounded-lg text-black bg-white"
@@ -64,6 +77,23 @@ const ModalAddCustomer = ({ onClose }) => {
                 ))}
               </select>
             </div>
+            <div className="flex flex-col gap-1">
+              <label className="font-semibold text-black">Customer Type</label>
+              <select
+                name="customertype"
+                value={form.customertype}
+                onChange={handleChange}
+                className="p-2 border rounded-lg text-black bg-white cursor-pointer"
+              >
+                <option value="">-- Select Customer Type --</option>
+                {Customertype.map((c) => (
+                  <option key={c} value={c}>
+                    {c}
+                  </option>
+                ))}
+              </select>
+            </div>
+
           </div>
 
           <div className="p-5 border-t flex justify-end gap-3">
