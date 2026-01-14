@@ -5,9 +5,9 @@ import MockUpLineChart2 from "../components/MockUpLineChart2";
 const StatCard = ({ title, value, change, icon: Icon }) => (
    <div className="rounded-2xl p-6 flex justify-between items-center bg-white border shadow">
   <div>
-    <p className="text-sm text-gray-500">{title}</p>
+    <p className="text-lg text-gray-500">{title}</p>
 
-    <div className="flex items-center gap-3 mt-1">
+    <div className="flex items-center gap-3 mt-3">
       <span className="text-lg font-medium text-gray-700">
         {value}
       </span>
