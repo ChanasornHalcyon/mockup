@@ -1,5 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
+import { FaUser } from "react-icons/fa";
+import { RiLockPasswordLine } from "react-icons/ri";
 const Index = () => {
   const router = useRouter();
 
@@ -35,34 +37,56 @@ const Index = () => {
             <label className="block text-sm font-medium text-gray-700">
               Username
             </label>
-            <input
-              type="text"
-              placeholder=" username"
-              className="
-                mt-2 w-full px-4 py-2.5 rounded-xl
-                border border-gray-300
-                bg-white/70 text-gray-900
-                focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-500
-                transition
-              "
-            />
+
+            <div className="relative mt-2">
+              <FaUser
+                className="
+                  absolute left-4 top-1/2 -translate-y-1/2
+                  text-gray-400
+                  "
+              />
+
+              <input
+                type="text"
+                placeholder="username"
+                className="
+                  w-full pl-11 pr-4 py-2.5 rounded-xl
+                  border border-gray-300
+                  bg-white/70 text-gray-900
+                  focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-500
+                  transition
+                 "
+              />
+            </div>
           </div>
+
+          ;
 
           <div>
             <label className="block text-sm font-medium text-gray-700">
               Password
             </label>
-            <input
-              type="password"
-              placeholder=" password"
-              className="
-                mt-2 w-full px-4 py-2.5 rounded-xl
-                border border-gray-300
-                bg-white/70 text-gray-900
-                focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-500
-                transition
-              "
-            />
+
+            <div className="relative mt-2">
+              <RiLockPasswordLine
+                className="
+        absolute left-4 top-1/2 -translate-y-1/2
+        text-gray-400
+      "
+              />
+
+              <input
+                type="password"
+                placeholder="password"
+                className="
+        w-full pl-11 pr-4 py-2.5 rounded-xl
+        border border-gray-300
+        bg-white/70 text-gray-900
+        focus:outline-none focus:ring-2 focus:ring-blue-300 focus:border-blue-500
+        transition
+      "
+              />
+            </div>
           </div>
 
           <div className="flex flex-col flex-row gap-5 mt-6">

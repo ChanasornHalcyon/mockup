@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 const ModalAddCustomer = ({ onClose }) => {
   const [form, setForm] = useState({
     customername: "",
+    industry: "",
     customerid: "",
     customertype: "",
     country: "",
@@ -45,7 +46,18 @@ const ModalAddCustomer = ({ onClose }) => {
                 name="customerid"
                 value={form.customerid}
                 onChange={handleChange}
-                placeholder=" Customer Id"
+
+                className="p-2 border rounded-lg text-black bg-white"
+              />
+            </div>
+            <div className="flex flex-col gap-1">
+              <label className="font-semibold text-black">Industry</label>
+              <input
+                type="text"
+                name="industry"
+                value={form.industry}
+                onChange={handleChange}
+
                 className="p-2 border rounded-lg text-black bg-white"
               />
             </div>
@@ -56,7 +68,7 @@ const ModalAddCustomer = ({ onClose }) => {
                 name="customer"
                 value={form.customername}
                 onChange={handleChange}
-                placeholder=" Customer Name"
+
                 className="p-2 border rounded-lg text-black bg-white"
               />
             </div>
