@@ -47,7 +47,7 @@ const Customers = () => {
               <table className="min-w-full text-sm">
                 <thead className="bg-gray-50 text-gray-600">
                   <tr>
-                    <th className="px-6 py-4 text-left">Customers Id</th>
+                    <th className="px-6 py-4 text-left"> ID</th>
                     <th className="px-6 py-4 text-left">Customers Name</th>
                     <th className="px-6 py-4 text-left">Distributor</th>
                     <th className="px-6 py-4 text-left">Country</th>

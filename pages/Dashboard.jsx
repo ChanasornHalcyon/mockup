@@ -17,11 +17,14 @@ const StatCard = ({ title, value, change, icon: Icon }) => (
             </p>
         </div>
 
-        <div className="h-10 w-10 rounded-xl flex items-center justify-center bg-gray-100 text-gray-600">
-            <Icon size={20} />
-        </div>
+
     </div>
 );
+const formatTHB = (value) =>
+    new Intl.NumberFormat("th-TH", {
+        style: "currency",
+        currency: "THB",
+    }).format(value);
 
 const Dashboard = () => {
 
@@ -37,7 +40,7 @@ const Dashboard = () => {
                 <StatCard
                     title="This Month Income"
                     value="$221,324.50"
-                    change="-2,201"
+                    change={formatTHB(6953004.12)}
                     icon={DollarSign}
                 />
                 {/* <StatCard

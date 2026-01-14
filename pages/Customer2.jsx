@@ -5,11 +5,11 @@ const Customers2 = () => {
   const [openModal, setOpenModal] = useState(false);
 
   const customers = [
-    { customerid: "001", customer: "Customer1", country: "Thailand", type: "Dealer", totalSales: 1250000 },
-    { customerid: "002", customer: "Customer2", country: "Thailand", type: "Dealer", totalSales: 980000 },
-    { customerid: "003", customer: "Customer3", country: "Thailand", type: "End User", totalSales: 2150000 },
-    { customerid: "004", customer: "Customer4", country: "Thailand", type: "End User ", totalSales: 5150000 },
-    { customerid: "007", customer: "Customer5", country: "Thailand", type: "End User", totalSales: 40000 },
+    { customerid: "001", industry: "Trading", customer: "Customer1", country: "Thailand", type: "Dealer", totalSales: 1250000 },
+    { customerid: "002", industry: "Automotive", customer: "Customer2", country: "Thailand", type: "Dealer", totalSales: 980000 },
+    { customerid: "003", industry: "Camera", customer: "Customer3", country: "Thailand", type: "End User", totalSales: 2150000 },
+    { customerid: "004", industry: "Medical", customer: "Customer4", country: "Thailand", type: "End User ", totalSales: 5150000 },
+    { customerid: "007", industry: "Trading", customer: "Customer5", country: "Thailand", type: "End User", totalSales: 40000 },
   ];
   const formatUSD = (value) =>
     new Intl.NumberFormat("en-US", {
@@ -39,7 +39,8 @@ const Customers2 = () => {
         <table className="min-w-full text-sm">
           <thead>
             <tr className="bg-gray-50 text-gray-600 text-left">
-              <th className="px-6 py-4 font-semibold">Customers Id</th>
+              <th className="px-6 py-4 font-semibold"> ID</th>
+              <th className="px-6 py-4 font-semibold"> Industry</th>
               <th className="px-6 py-4 font-semibold">Customers Name</th>
               <th className="px-6 py-4 font-semibold">Country</th>
               <th className="px-6 py-4 font-semibold">type</th>
@@ -57,6 +58,9 @@ const Customers2 = () => {
               >
                 <td className="px-6 py-4 font-medium text-gray-800">
                   {item.customerid}
+                </td>
+                <td className="px-6 py-4 font-medium text-gray-800">
+                  {item.industry}
                 </td>
                 <td className="px-6 py-4 font-medium text-gray-800">
                   {item.customer}

@@ -17,27 +17,30 @@ const StatCard = ({ title, value, change, icon: Icon }) => (
             </p>
         </div>
 
-        <div className="h-10 w-10 rounded-xl flex items-center justify-center bg-gray-100 text-gray-600">
-            <Icon size={20} />
-        </div>
+
     </div>
 );
 
+const formatTHB = (value) =>
+    new Intl.NumberFormat("th-TH", {
+        style: "currency",
+        currency: "THB",
+    }).format(value);
 const Dashboard2 = () => {
 
     return (
         <div className="space-y-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-                <StatCard
+                {/* <StatCard
                     title="This Month Sales"
                     value="21,324"
                     change="+2,031"
                     icon={ShoppingBag}
-                />
+                /> */}
                 <StatCard
-                    title="This Month Income"
+                    title="This Month Buying"
                     value="$221,324.50"
-                    change="-2,201"
+                    change={formatTHB(6953004.12)}
                     icon={DollarSign}
                 />
                 {/* <StatCard
@@ -58,7 +61,7 @@ const Dashboard2 = () => {
                 <div className="lg:col-span-2 bg-white rounded-2xl border shadow p-6">
                     <div className="flex justify-between items-center mb-4">
                         <h3 className="font-semibold text-gray-800">
-                           Top 3 Category
+                            Top 3 Category
                         </h3>
 
                     </div>
@@ -82,7 +85,7 @@ const Dashboard2 = () => {
             <div className="bg-white rounded-2xl border shadow overflow-hidden">
                 <div className="flex justify-between items-center p-5 border-b">
                     <h3 className="font-semibold text-gray-800">
-                      This Month Sales
+                        This Month Sales
                     </h3>
 
                 </div>
@@ -91,18 +94,18 @@ const Dashboard2 = () => {
                     <table className="min-w-full text-sm">
                         <thead className="bg-gray-50 text-gray-600">
                             <tr>
-                                    <th className="px-6 py-3 text-left">Name</th>
+                                <th className="px-6 py-3 text-left">Name</th>
                                 <th className="px-6 py-3 text-left">Location</th>
-                                  <th className="px-6 py-3 text-left">Sales</th>
+                                <th className="px-6 py-3 text-left">Sales</th>
                                 <th className="px-6 py-3 text-right">Actions</th>
                             </tr>
                         </thead>
 
                         <tbody className="divide-y">
                             {[
-                                ["Customers1","Thailand","2400" ],
-                                ["Customers2", "Thailand","2000"],
-                                ["Customers3 ", "Thailand","500"],
+                                ["Customers1", "Thailand", "2400"],
+                                ["Customers2", "Thailand", "2000"],
+                                ["Customers3 ", "Thailand", "500"],
                             ].map((row, i) => (
                                 <tr key={i} className="hover:bg-gray-50">
                                     {row.map((col, idx) => (
