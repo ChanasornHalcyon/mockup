@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import Customers from "./Customers";
 import Dashboard from "./Dashboard";
+import { useRouter } from "next/router";
 const MENU = [
     { key: "dashboard", label: "Dashboard", icon: Home },
     { key: "customers", label: "Customers", icon: ClipboardList },
@@ -20,7 +21,7 @@ const MENU = [
 const Homepage = () => {
     const [activePage, setActivePage] = useState("dashboard");
     const [sidebarOpen, setSidebarOpen] = useState(false);
-
+    const router = useRouter();
     const renderContent = () => {
         switch (activePage) {
             case "customers":
@@ -31,7 +32,9 @@ const Homepage = () => {
 
         }
     };
-
+    const logout = () => {
+        router.push("./")
+    }
     return (
         <div className="h-screen flex bg-[#F8F9FD] overflow-hidden relative">
 
@@ -106,7 +109,7 @@ const Homepage = () => {
 
 
                 <div className="p-4 border-t">
-                    <button className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-red-600 hover:bg-red-50 transition">
+                    <button onClick={logout} className=" cursor-pointer w-full flex items-center gap-3 px-4 py-3 rounded-xl text-red-600 hover:bg-red-50 transition">
                         <LogOut size={20} />
                         Logout
                     </button>

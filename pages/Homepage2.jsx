@@ -12,6 +12,7 @@ import {
 import Customers2 from "./Customer2";
 import Products from "./Products";
 import Dashboard2 from "./Dashboard2";
+import { useRouter } from "next/router";
 const MENU = [
     { key: "dashboard2", label: "Dashboard", icon: Home },
     { key: "customers", label: "Customers", icon: ClipboardList },
@@ -23,20 +24,23 @@ const Homepage2 = () => {
     const [activePage, setActivePage] = useState("dashboard2");
     const [sidebarOpen, setSidebarOpen] = useState(false);
 
+    const router = useRouter();
     const renderContent = () => {
         switch (activePage) {
-             case "dashboard2":
+            case "dashboard2":
                 return <Dashboard2 />;
             case "customers":
                 return <Customers2 />;
 
-                case "products":
+            case "products":
                 return <Products />;
             default:
 
         }
     };
-
+    const logout = () => {
+        router.push("./")
+    }
     return (
         <div className="h-screen flex bg-[#F8F9FD] overflow-hidden relative">
 
@@ -110,7 +114,7 @@ const Homepage2 = () => {
 
 
                 <div className="p-4 border-t">
-                    <button className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-red-600 hover:bg-red-50 transition">
+                    <button onClick={logout} className=" cursor-pointer w-full flex items-center gap-3 px-4 py-3 rounded-xl text-red-600 hover:bg-red-50 transition">
                         <LogOut size={20} />
                         Logout
                     </button>
