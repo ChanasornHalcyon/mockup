@@ -65,13 +65,13 @@ const Index = () => {
             />
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-5 mt-6">
+          <div className="flex flex-col flex-row gap-5 mt-6">
             <button
               type="button"
               onClick={goHomapage}
               className="
                     group
-                    w-44 py-3 rounded-2xl
+                    w-44 py-3 rounded-2xl 
                     font-semibold text-white text-sm
                     bg-gradient-to-r from-blue-600 to-blue-700
                     shadow-[0_10px_30px_rgba(37,99,235,0.35)]
@@ -114,7 +114,7 @@ const Index = () => {
         </form>
 
         <p className="text-center text-xs text-gray-500 mt-6">
-            Central Warehouse Backoffice © {new Date().getFullYear()}
+          Central Warehouse Backoffice © {new Date().getFullYear()}
         </p>
       </div>
     </div>
