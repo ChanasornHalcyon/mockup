@@ -11,7 +11,11 @@ const Customers2 = () => {
     { customer: "Customer4", country: "Thailand", totalSales: 5150000 },
     { customer: "Customer5", country: "Thailand", totalSales: 40000 },
   ];
-
+  const formatUSD = (value) =>
+    new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+    }).format(value);
   return (
     <div>
       <div className="flex justify-between items-center mb-6">
@@ -56,7 +60,7 @@ const Customers2 = () => {
                   {item.country}
                 </td>
                 <td className="px-6 py-4 text-right font-semibold text-[#0B4EA2]">
-                  {item.totalSales.toLocaleString()} ฿
+                  {formatUSD(item.totalSales)}
                 </td>
               </tr>
             ))}

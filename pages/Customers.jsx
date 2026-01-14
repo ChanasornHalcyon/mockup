@@ -2,8 +2,14 @@ import React, { useState } from "react";
 import TableCustomer from "./TableCustomer";
 
 const Customers = () => {
-  const [view, setView] = useState("list"); 
+  const [view, setView] = useState("list");
   const [selectedCustomer, setSelectedCustomer] = useState(null);
+
+  const formatUSD = (value) =>
+    new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+    }).format(value);
 
   const customers = [
     { customer: "Customer1", distributor: "FDM", country: "Thailand", totalSales: 1250000 },
@@ -67,7 +73,7 @@ const Customers = () => {
                         {item.country}
                       </td>
                       <td className="px-6 py-4 text-right font-semibold text-[#0B4EA2]">
-                        {item.totalSales.toLocaleString()} ฿
+                        {formatUSD(item.totalSales)}
                       </td>
                     </tr>
                   ))}
