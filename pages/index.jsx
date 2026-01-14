@@ -25,7 +25,7 @@ const Index = () => {
       >
         <div className="flex justify-center mb-4"></div>
 
-        <h1 className="text-center text-2xl font-semibold text-gray-800">
+        <h1 className="text-center text-3xl font-semibold text-gray-800">
           Central Warehouse Backoffice
         </h1>
 
