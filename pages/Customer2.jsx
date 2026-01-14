@@ -6,10 +6,10 @@ const Customers2 = () => {
 
   const customers = [
     { customerid: "001", industry: "Trading", customer: "Customer1", country: "Thailand", type: "Dealer", totalSales: 1250000 },
-    { customerid: "002", industry: "Automotive", customer: "Customer2", country: "Thailand", type: "Dealer", totalSales: 980000 },
+    { customerid: "002", industry: "Automotive", customer: "Customer2", country: "Thailand", type: "End User", totalSales: 980000 },
     { customerid: "003", industry: "Camera", customer: "Customer3", country: "Thailand", type: "End User", totalSales: 2150000 },
     { customerid: "004", industry: "Medical", customer: "Customer4", country: "Thailand", type: "End User ", totalSales: 5150000 },
-    { customerid: "007", industry: "Trading", customer: "Customer5", country: "Thailand", type: "End User", totalSales: 40000 },
+    { customerid: "007", industry: "Trading", customer: "Customer5", country: "Thailand", type: "Dealer", totalSales: 40000 },
   ];
   const formatUSD = (value) =>
     new Intl.NumberFormat("en-US", {

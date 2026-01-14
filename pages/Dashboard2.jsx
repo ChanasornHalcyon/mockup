@@ -3,22 +3,24 @@ import { ShoppingBag, DollarSign, Users, TrendingUp } from "lucide-react";
 import MockUpDonutChart from "../components/MockUpDonutChart";
 import MockUpLineChart2 from "../components/MockUpLineChart2";
 const StatCard = ({ title, value, change, icon: Icon }) => (
-    <div className="rounded-2xl p-5 flex justify-between items-center bg-white border shadow">
-        <div>
-            <p className="text-sm text-gray-500">{title}</p>
-            <h3 className="text-2xl font-semibold mt-1 text-gray-800">
-                {value}
-            </h3>
-            <p
-                className={`text-xs mt-1 ${change.startsWith("+") ? "text-green-500" : "text-red-500"
-                    }`}
-            >
-                {change}
-            </p>
-        </div>
+   <div className="rounded-2xl p-6 flex justify-between items-center bg-white border shadow">
+  <div>
+    <p className="text-sm text-gray-500">{title}</p>
 
+    <div className="flex items-center gap-3 mt-1">
+      <span className="text-lg font-medium text-gray-700">
+        {value}
+      </span>
 
+      <span className="text-gray-400">|</span>
+
+      <span className="text-lg font-medium text-gray-700">
+        {formatTHB(6953004.12)}
+      </span>
     </div>
+  </div>
+</div>
+
 );
 
 const formatTHB = (value) =>
@@ -30,7 +32,7 @@ const Dashboard2 = () => {
 
     return (
         <div className="space-y-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 ">
                 {/* <StatCard
                     title="This Month Sales"
                     value="21,324"
